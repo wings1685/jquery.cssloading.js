@@ -1,0 +1,77 @@
+This is a jQuery plugin providing a loading animation by CSS3.
+'cssloading()' method starts drawing animation, and 'stopcssloading()' function ends it.
+
+All of shapes and property is followings;
+
+[dot]
+type: type of shape / 'dot'
+width: horizontal size of image area / integer value
+color: color value / CSS compatible value
+size: size of each item / integer value
+items: number of items / integer value
+speed: animation speed / millisecond
+clockwise: clockwise or not / true or false
+
+[line]
+type: type of shape / 'dot'
+color: color value / CSS compatible value
+size: each item size / integer value
+items: number of items / integer value
+speed: animation speed / millisecond
+direction: The starting point / 'left', or 'right'
+shape: shape of each item / 'square' or 'circle'
+
+[square]
+type: type of shape / 'dot'
+color: color value / CSS compatible value
+size: each item size / integer value
+items: number of items / integer value
+speed: animation speed / millisecond
+clockwise: clockwise or not / true or false
+shape: shape of each item / 'square' or 'circle'
+
+[block]
+type: type of shape / 'dot'
+color: color value / CSS compatible value
+size: each item size / integer value
+items: number of items / integer value
+speed: animation speed / millisecond
+direction: The starting point / 'left', 'right', 'top', or 'bottom'
+shape: shape of each item / 'square' or 'circle'
+
+[eddy]
+type: type of shape / 'dot'
+color: color value / CSS compatible value
+size: each item size / integer value
+items: number of items / integer value
+speed: animation speed / millisecond
+clockwise: clockwise or not / true or false
+shape: shape of each item / 'square' or 'circle'
+
+
+Here's a specific example;
+
+[html]
+<button id='line'>Play/Stop</button>
+<div id='loading'></div>
+
+[jQuery]
+$('button').click(function() {
+	if ($('#loading').find('.loading_wrapper')[0]) {
+		$('#loading').stopcssloading();
+	} else {
+		var option = {
+			type: 'dot',
+			width: 100,
+			color: 'rgba(0, 102, 255, .9)',
+			size: 3,
+			items: 30,
+			speed: 1000,
+			clockwise: false
+		};
+		$('#loading').cssloading(option);
+	}
+});
+
+
+Thank you.
