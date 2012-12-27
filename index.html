@@ -1,0 +1,236 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery.cssloading.js</title>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+	<script type="text/javascript" src="./jquery.cssloading.min.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			var option = {
+// dot
+				dot: {
+					type: 'dot',
+					width: 50,
+					color: 'rgba(0, 102, 255, .9)',
+					size: 3,
+					items: 12,
+					speed: 1000,
+					clockwise: false
+				},
+// line(square)
+				line_square: {
+					type: 'line',
+					color: 'rgba(0, 102, 255, .9)',
+					size: 5,
+					items: 7,
+					speed: 500,
+					direction: 'left',
+					shape: 'square'
+				},
+// line(circle)
+				line_circle: {
+					type: 'line',
+					color: 'rgba(0, 102, 255, .9)',
+					size: 5,
+					items: 7,
+					speed: 1000,
+					direction: 'right'
+				},
+// square(square)
+				square_square: {
+					type: 'square',
+					color: 'rgba(0, 102, 255, .9)',
+					size: 5,
+					items: 3,
+					speed: 500,
+					clockwise: true,
+					shape: 'square'
+				},
+// square(circle)
+				square_circle: {
+					type: 'square',
+					color: 'rgba(0, 102, 255, .9)',
+					size: 5,
+					items: 7,
+					speed: 1500,
+					clockwise: false
+				},
+// block(square)
+				block_square: {
+					type: 'block',
+					color: 'rgba(0, 102, 255, .9)',
+					size: 5,
+					items: 3,
+					speed: 1000,
+					direction: 'left',
+					shape: 'square'
+				},
+// block(circle)
+				block_circle: {
+					type: 'block',
+					color: 'rgba(0, 102, 255, .9)',
+					size: 5,
+					items: 7,
+					speed: 1500,
+					direction: 'right'
+				},
+// block(square/top)
+				block_square_top: {
+					type: 'block',
+					color: 'rgba(0, 102, 255, .9)',
+					size: 5,
+					items: 3,
+					speed: 1000,
+					direction: 'top',
+					shape: 'square'
+				},
+// block(circle/bottom)
+				block_circle_bottom: {
+					type: 'block',
+					color: 'rgba(0, 102, 255, .9)',
+					size: 5,
+					items: 7,
+					speed: 1500,
+					direction: 'bottom'
+				},
+// eddy(square)
+				eddy_square: {
+					type: 'eddy',
+					color: 'rgba(0, 102, 255, .9)',
+					size: 5,
+					items: 6,
+					speed: 1000,
+					clockwise: true,
+					shape: 'square'
+				},
+// eddy(circle)
+				eddy_circle: {
+					type: 'eddy',
+					color: 'rgba(0, 102, 255, .9)',
+					size: 5,
+					items: 9,
+					speed: 1500,
+					clockwise: false
+				}
+			}
+
+			$('button').live('click', function() {
+				if ($(this).attr('title') == 'Play') {
+					$('#' + $(this).val()).cssloading(option[$(this).val()]);
+					$(this).attr('title', 'Stop').html('Stop');
+				} else {
+					$('#' + $(this).val()).stopcssloading();
+					$(this).attr('title', 'Play').html('Play');
+				}
+			});
+		});
+	</script>
+	<style>
+		body {
+			padding: 50px;
+			text-align: center;
+			background: rgb(235, 235, 235);
+			text-shadow: 1px 1px 0px rgb(255, 255, 255);
+		}
+		.boxes {
+			width: 700px;
+			margin: 10px auto;
+		}
+		.box {
+			width: 200px;
+			height: 100px;
+			display: inline-block;
+			position: relative;
+			text-align: left;
+			border: 1px solid rgb(50, 50, 50);
+		}
+		strong {
+			padding: 0px 5px;
+			display: block;
+			position: absolute;
+			top: -7px;
+			left: 5px;
+			font-size: 11px;
+			background: rgb(235, 235, 235);
+		}
+		button {
+			display: block;
+			position: absolute;
+			bottom: 5px;
+			right: 5px;
+		}
+		#dot {margin-top: 25px;}
+		#line_square, #line_circle {margin-top: 43px;}
+		#square_square, #block_square, #block_square_top {margin-top: 33px;}
+		#square_circle, #block_circle, #block_circle_bottom {margin-top: 12px;}
+		#eddy_square {margin-top: 18px;}
+		#eddy_circle {margin-top: 3px;}
+	</style>
+</head>
+<body>
+	<div class="boxes">
+		<div class="box">
+			<strong title="dot">dot</strong>
+			<div id="dot"></div>
+			<button value="dot" title="Play">Play</button>
+		</div>
+		<div class="box">
+			<strong title="line(shape: square)">line(shape: square)</strong>
+			<div id="line_square"></div>
+			<button value="line_square" title="Play">Play</button>
+		</div>
+		<div class="box">
+			<strong title="line(shape: circle)">line(shape: circle)</strong>
+			<div id="line_circle"></div>
+			<button value="line_circle" title="Play">Play</button>
+		</div>
+	</div>
+	<div class="boxes">
+		<div class="box">
+			<strong title="square(shape: square)">square(shape: square)</strong>
+			<div id="square_square"></div>
+			<button value="square_square" title="Play">Play</button>
+		</div>
+		<div class="box">
+			<strong title="square(shape: circle)">square(shape: circle)</strong>
+			<div id="square_circle"></div>
+			<button value="square_circle" title="Play">Play</button>
+		</div>
+		<div class="box">
+			<strong title="block(shape: square)">block(shape: square)</strong>
+			<div id="block_square"></div>
+			<button value="block_square" title="Play">Play</button>
+		</div>
+	</div>
+	<div class="boxes">
+		<div class="box">
+			<strong title="block(shape: circle)">block(shape: circle)</strong>
+			<div id="block_circle"></div>
+			<button value="block_circle" title="Play">Play</button>
+		</div>
+		<div class="box">
+			<strong title="block(shape: square)">block(shape: square)</strong>
+			<div id="block_square_top"></div>
+			<button value="block_square_top" title="Play">Play</button>
+		</div>
+		<div class="box">
+			<strong title="block(shape: circle)">block(shape: circle)</strong>
+			<div id="block_circle_bottom"></div>
+			<button value="block_circle_bottom" title="Play">Play</button>
+		</div>
+	</div>
+	<div class="boxes">
+		<div class="box">
+			<strong title="eddy(shape: square)">eddy(shape: square)</strong>
+			<div id="eddy_square"></div>
+			<button value="eddy_square" title="Play">Play</button>
+		</div>
+		<div class="box">
+			<strong title="eddy(shape: circle)">eddy(shape: circle)</strong>
+			<div id="eddy_circle"></div>
+			<button value="eddy_circle" title="Play">Play</button>
+		</div>
+	</div>
+</body>
+</html>
