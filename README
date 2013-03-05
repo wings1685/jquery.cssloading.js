@@ -1,55 +1,57 @@
-This is a jQuery plugin providing a loading animation by CSS3.
-'cssloading()' method starts drawing animation, and 'stopcssloading()' function ends it.
+これはローディングアニメーションを CSS3 で生成する jQuery プラグインです。
+cssloading() でアニメーション生成、stopcssloading() で破棄します。
+CSS3 で描かれるので、Canvas 対応ブラウザ（非対応の場合は対応処理を施した上）でお使いください。
 
-All of shapes and property is followings;
+
+全ての形とプロパティは以下の通りです。
 
 [dot]
-type: type of shape / 'dot'
-width: horizontal size of image area / integer value
-color: color value / CSS compatible value
-size: size of each item / integer value
-items: number of items / integer value
-speed: animation speed / millisecond
-clockwise: clockwise or not / true or false
+type: アニメーションの形 / 'dot'
+width: アニメーション全体の大きさ / 数値
+color: アニメーションの色 / CSS での値
+size: アニメーションする物体の大きさ / 数値
+items: number of items / 数値
+speed: アニメーションの速さ / ミリ秒
+clockwise: 時計回りかどうか / true もしくは false
 
 [line]
-type: type of shape / 'dot'
-color: color value / CSS compatible value
-size: each item size / integer value
-items: number of items / integer value
-speed: animation speed / millisecond
-direction: The starting point / 'left', or 'right'
-shape: shape of each item / 'square' or 'circle'
+type: アニメーションの形 / 'dot'
+color: アニメーションの色 / CSS での値
+size: アニメーションする物体の大きさ / 数値
+items: アニメーションする物体の数 / 数値
+speed: アニメーションの速さ / ミリ秒
+direction: アニメーションする方向 / 'left' もしくは 'right'
+shape: アニメーションする物体の形 / 'square' もしくは 'circle'
 
 [square]
-type: type of shape / 'dot'
-color: color value / CSS compatible value
-size: each item size / integer value
-items: number of items / integer value
-speed: animation speed / millisecond
-clockwise: clockwise or not / true or false
-shape: shape of each item / 'square' or 'circle'
+type: アニメーションの形 / 'dot'
+color: アニメーションの色 / CSS での値
+size: アニメーションする物体の大きさ / 数値
+items: アニメーションする物体の数 / 数値
+speed: アニメーションの速さ / ミリ秒
+clockwise: 時計回りかどうか / true もしくは false
+shape: アニメーションする物体の形 / 'square' もしくは 'circle'
 
 [block]
-type: type of shape / 'dot'
-color: color value / CSS compatible value
-size: each item size / integer value
-items: number of items / integer value
-speed: animation speed / millisecond
-direction: The starting point / 'left', 'right', 'top', or 'bottom'
-shape: shape of each item / 'square' or 'circle'
+type: アニメーションの形 / 'dot'
+color: アニメーションの色 / CSS での値
+size: アニメーションする物体の大きさ / 数値
+items: アニメーションする物体の数 / 数値
+speed: アニメーションの速さ / ミリ秒
+direction: アニメーションする方向 / 'left', 'right', 'top', もしくは 'bottom'
+shape: アニメーションする物体の形 / 'square' or 'circle'
 
 [eddy]
-type: type of shape / 'dot'
-color: color value / CSS compatible value
-size: each item size / integer value
-items: number of items / integer value
-speed: animation speed / millisecond
-clockwise: clockwise or not / true or false
-shape: shape of each item / 'square' or 'circle'
+type: アニメーションの形 / 'dot'
+color: アニメーションの色 / CSS での値
+size: アニメーションする物体の大きさ / 数値
+items: アニメーションする物体の数 / 数値
+speed: アニメーションの速さ / ミリ秒
+clockwise: 時計回りかどうか / true もしくは false
+shape: アニメーションする物体の形 / 'square' もしくは 'circle'
 
 
-Here's a specific example;
+例をここに記します。
 
 [html]
 <button id='line'>Play/Stop</button>
@@ -74,4 +76,4 @@ $('button').click(function() {
 });
 
 
-Thank you.
+このプラグインがお役に立てれば幸いです。
