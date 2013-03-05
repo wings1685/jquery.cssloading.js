@@ -15,7 +15,7 @@ speed: アニメーションの速さ / ミリ秒
 clockwise: 時計回りかどうか / true もしくは false
 
 [line]
-type: アニメーションの形 / 'dot'
+type: アニメーションの形 / 'line'
 color: アニメーションの色 / CSS での値
 size: アニメーションする物体の大きさ / 数値
 items: アニメーションする物体の数 / 数値
@@ -24,7 +24,7 @@ direction: アニメーションする方向 / 'left' もしくは 'right'
 shape: アニメーションする物体の形 / 'square' もしくは 'circle'
 
 [square]
-type: アニメーションの形 / 'dot'
+type: アニメーションの形 / 'square'
 color: アニメーションの色 / CSS での値
 size: アニメーションする物体の大きさ / 数値
 items: アニメーションする物体の数 / 数値
@@ -33,7 +33,7 @@ clockwise: 時計回りかどうか / true もしくは false
 shape: アニメーションする物体の形 / 'square' もしくは 'circle'
 
 [block]
-type: アニメーションの形 / 'dot'
+type: アニメーションの形 / 'block'
 color: アニメーションの色 / CSS での値
 size: アニメーションする物体の大きさ / 数値
 items: アニメーションする物体の数 / 数値
@@ -42,7 +42,7 @@ direction: アニメーションする方向 / 'left', 'right', 'top', もしく
 shape: アニメーションする物体の形 / 'square' or 'circle'
 
 [eddy]
-type: アニメーションの形 / 'dot'
+type: アニメーションの形 / 'eddy'
 color: アニメーションの色 / CSS での値
 size: アニメーションする物体の大きさ / 数値
 items: アニメーションする物体の数 / 数値
